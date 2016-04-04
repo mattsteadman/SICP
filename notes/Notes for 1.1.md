@@ -65,24 +65,24 @@ Lisp supports constructs for conditional expressions, also known as case analysi
 
 and so on. 
 
-(<p> <e>) is called a clause
-<p> is called a predicate, and it's value is interpretted as true of false
-<e> is a consequent expression
+`(<p> <e>)` is called a clause
+`<p>` is called a predicate, and it's value is interpretted as true of false
+`<e>` is a consequent expression
 
-"cond" supports a fall-through operator, "else", used as follows
+`cond` supports a fall-through operator, `else`, used as follows
 
     (cond (<p1> <e1>)
           (<p2> <e2>)
           (<p3> <e3>)
           (else <e4>))
 
-Another operator for case analysis is the special form "if", used as follows
+Another operator for case analysis is the special form `if`, used as follows
 
-(if <predicate> <consequent> <alternative>)
+    (if <predicate> <consequent> <alternative>)
 
-Note that "if" cannot be modeled using the substitution model, because it only evaluates one of <consequent> and <alternative>.
+Note that `if` cannot be modeled using the substitution model, because it only evaluates one of `<consequent>` and `<alternative>`.
 
-We also have logical operaters "and", "or" and "not" used like
+We also have logical operaters `and`, `or` and `not` used like
 
     (and <e1> <e2> <e3>)
 
@@ -90,7 +90,7 @@ We also have logical operaters "and", "or" and "not" used like
 
     (not <e>)
 
-Note that we make the distinction between special forms and procedures. Both are a kind of operator, but special forms cannot be modeled with any of the procedure models that we will come up with. "and" and "or" are special forms rather than procedures, whereas "not" is a procedure.
+Note that we make the distinction between special forms and procedures. Both are a kind of operator, but special forms cannot be modeled with any of the procedure models that we will come up with. `and` and `or` are special forms rather than procedures, whereas `not` is a procedure.
 
 **1.1.7 Example: Square Roots by Newton's Method**
 
@@ -114,8 +114,7 @@ Note that we make the distinction between special forms and procedures. Both are
   
 **1.1.8  Procedures as Black-Box Abstractions**
 
-free and bound variables:
-A procedure definition will bind a free variable. Bound varibles are exactly analogous to dummy variables.
+*free and bound variables:* A procedure definition will bind a free variable. Bound varibles are exactly analogous to dummy variables.
 
 *lexical scoping:*
 
