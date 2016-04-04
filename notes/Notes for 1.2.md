@@ -12,6 +12,7 @@ A recursive procedure is any procedure whose definition refers to itself.
 A recursive process is a process which *evolves* recursively, no matter how it is written.
 
 `fact-iter` is a iterative process which is implemented as a recursive procedure.
+
     (define (factorial n)
       (fact-iter 1 1 n))
 
