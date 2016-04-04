@@ -114,7 +114,7 @@ Note that we make the distinction between special forms and procedures. Both are
   
 ###1.1.8  Procedures as Black-Box Abstractions###
 
-*Free and Bound Variables:* A procedure definition will bind a free variable. Bound varibles are exactly analogous to dummy variables.
+**Free and Bound Variables:** A procedure definition will bind a free variable. Bound varibles are exactly analogous to dummy variables.
 
 **Lexical Scoping:**
 AKA static scoping, as opposed to dynamic scoping. 
