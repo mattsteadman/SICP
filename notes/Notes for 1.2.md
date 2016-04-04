@@ -1,11 +1,11 @@
 ###1.2.1  Linear Recursion and Iteration###
 
-*Linear Recursive Process:* Uses deferred operations. Information that the interpreter keeps track of grows linearly, just like the number of steps.
+**Linear Recursive Process:** Uses deferred operations. Information that the interpreter keeps track of grows linearly, just like the number of steps.
 
-*Linear Iterative Process:* Uses state variables. Information that the interpreter keeps track of is fixed.
+**Linear Iterative Process:** Uses state variables. Information that the interpreter keeps track of is fixed.
 
 
-An recursive process is *not* the same thing as a recursive procedure.
+An **recursive process** is *not* the same thing as a **recursive procedure**.
 
 A recursive procedure is any procedure whose definition refers to itself.
 
