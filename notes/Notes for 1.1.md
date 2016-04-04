@@ -117,7 +117,6 @@ Note that we make the distinction between special forms and procedures. Both are
 *free and bound variables:* A procedure definition will bind a free variable. Bound varibles are exactly analogous to dummy variables.
 
 *lexical scoping:*
-
 AKA static scoping, as opposed to dynamic scoping. 
 In SICP, lexical scoping is when a variable is bound by a procedure definition, but within nested procedure definitions, it becomes a free variable whose value is given by the outer procedure argument.
 In a lexically scoped language, the scope of an identifier is fixed at compile time to some region in the source code containing the identifier's declaration. This means that an identifier is only accessible within that region (including procedures declared within it). 
@@ -127,5 +126,4 @@ Statically scoped languages differ as to whether the scope is limited to the sma
 Also note that in Lisp, a symbol's binding has lexical scope, not the mapping from an identifier to a symbol. That mapping transcends scope. For instance in `(let ((x 3)) (let ((x 4)) ..))` the identifier X in the source is mapped to a symbol object when the source is scanned and turned into a nested list, at what is known as "read time". Both occurrences of X map to the same symbol object, even though each one denotes a local variable in a different lexical scope. A symbol object is a concrete data structure in the address space; every X in the internal representation of the form is a pointer to that object.
 
 *Block Structure:*
-
 Refers to the nesting of definitions within other defintions, so that inner defintions are only accessible from within the outer defintion. Embedded definitions must come first in a procedure body.
