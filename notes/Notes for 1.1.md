@@ -17,7 +17,7 @@ but the second rule is really just a special case of the third when we say that 
 
 Notice that it is meaningless to speak of the value of a name without specifying which environment that we are working in.
 
-One combination that does NOT get evaluated using the above rule is a combination whose operator is the "define" operator. "define" is an operator which applies a procedure to one element which has NO value in the environment (the first operand) and one element that does (the second operator). Exceptions to the evaluation rule are called special forms. Scheme has a small number of special forms compared to other lisps.
+One combination that does NOT get evaluated using the above rule is a combination whose operator is the `define` operator. `define` is an operator which applies a procedure to one element which has NO value in the environment (the first operand) and one element that does (the second operator). Exceptions to the evaluation rule are called special forms. Scheme has a small number of special forms compared to other lisps.
 
 **1.1.4 Compound Procedures**
 
@@ -57,7 +57,7 @@ Note that if a formal parameter appears multiple times in an operator body, it w
 
 **1.1.6 Conditional Expressions and Predicates**
 
-Lisp supports constructs for conditional expressions, also known as case analysis. One such construct is the "cond" operator. The general form is 
+Lisp supports constructs for conditional expressions, also known as case analysis. One such construct is the `cond` operator. The general form is 
 
     (cond (<p1> <e1>)
           (<p2> <e2>)
@@ -124,7 +124,7 @@ In a lexically scoped language, the scope of an identifier is fixed at compile t
 
 This contrasts with dynamic scope where the scope depends on the nesting of procedure and function calls at run time.
 Statically scoped languages differ as to whether the scope is limited to the smallest block (including begin/end blocks) containing the identifier's declaration (e.g. C, Perl) or to whole function and procedure bodies, or some larger unit of code.
-Also note that in Lisp, a symbol's binding has lexical scope, not the mapping from an identifier to a symbol. That mapping transcends scope. For instance in (let ((x 3)) (let ((x 4)) ..)) the identifier X in the source is mapped to a symbol object when the source is scanned and turned into a nested list, at what is known as "read time". Both occurrences of X map to the same symbol object, even though each one denotes a local variable in a different lexical scope. A symbol object is a concrete data structure in the address space; every X in the internal representation of the form is a pointer to that object.
+Also note that in Lisp, a symbol's binding has lexical scope, not the mapping from an identifier to a symbol. That mapping transcends scope. For instance in `(let ((x 3)) (let ((x 4)) ..))` the identifier X in the source is mapped to a symbol object when the source is scanned and turned into a nested list, at what is known as "read time". Both occurrences of X map to the same symbol object, even though each one denotes a local variable in a different lexical scope. A symbol object is a concrete data structure in the address space; every X in the internal representation of the form is a pointer to that object.
 
 *Block Structure:*
 
