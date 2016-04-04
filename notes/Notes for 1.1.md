@@ -114,9 +114,9 @@ Note that we make the distinction between special forms and procedures. Both are
   
 **1.1.8  Procedures as Black-Box Abstractions**
 
-*free and bound variables:* A procedure definition will bind a free variable. Bound varibles are exactly analogous to dummy variables.
+*Free and Bound Variables:* A procedure definition will bind a free variable. Bound varibles are exactly analogous to dummy variables.
 
-*lexical scoping:*
+*Lexical Scoping:*
 AKA static scoping, as opposed to dynamic scoping. 
 In SICP, lexical scoping is when a variable is bound by a procedure definition, but within nested procedure definitions, it becomes a free variable whose value is given by the outer procedure argument.
 In a lexically scoped language, the scope of an identifier is fixed at compile time to some region in the source code containing the identifier's declaration. This means that an identifier is only accessible within that region (including procedures declared within it). 
