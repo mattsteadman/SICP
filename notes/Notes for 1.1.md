@@ -41,15 +41,15 @@ A primitive procedure is a built-in procedure.
 
 Evaluating compound procedures is done in the same way as evaluating primitive procedures:
 
-"To apply a compound procedure to arguments, evaluate the body of the procedure with each formal parameter replaced by the corrosponding arguments (or each formal parameter bound to the corrosponding actual parameter)."
+*To apply a compound procedure to arguments, evaluate the body of the procedure with each formal parameter replaced by the corrosponding arguments (or each formal parameter bound to the corrosponding actual parameter).*
 
 Notice that this rule (or procedure) for evaluating procedures ask us to evaluate the operands of a combination before evaluating the operator, because it asks us to evaluate the body of the procedure using the arguments (value of operands). This is somewhat different than the "percolate upwards" algorithm described above.
 
 Note that this is just a model that is meant to give meaning to the concept of procedure application. It does not actually describe how the interpreter carries out procedures.
 
-normal-order evaluation: substitute operand expressions for formal parameters when applying procedures (i.e. evaluate operators before operands).
+*normal-order evaluation:* substitute operand expressions for formal parameters when applying procedures (i.e. evaluate operators before operands).
 
-applicative-order evaluation: substitute arguments (operand values) for formal parameters when applying procedures (i.e. evaluate operands before operators). Used in the substitution model as well as by the interpreter.
+*applicative-order evaluation:* substitute arguments (operand values) for formal parameters when applying procedures (i.e. evaluate operands before operators). Used in the substitution model as well as by the interpreter.
 
 For procedures that can be modeled using the substitution model, these two evaluation orders will produce the same value.
 
