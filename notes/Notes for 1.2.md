@@ -1,3 +1,4 @@
+##1.2  Procedures and the Processes They Generate##
 ###1.2.1  Linear Recursion and Iteration###
 
 **Linear Recursive Process:** Uses deferred operations. Information that the interpreter keeps track of grows linearly, just like the number of steps.
