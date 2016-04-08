@@ -1,3 +1,42 @@
+#Chapter 1 Building Abstractions with Procedures#
+
+Computational **Process** - This is refers to the evolution of the execution of a procedure.
+
+**Program** or **Procedure** - A description of a process, or the rules that governs its evolution.
+
+**Interpreter** - Carries out the evolution of a process, or the execution of a procedure.
+
+**Procedures and Data** - Data is the *stuff* we want to manipulate, and procedures are descriptions of the rules for manipulating them. Even though procedures are implemented as data in lisp, they still might be different in some conceptions of computation.
+
+
+
+##1.1 The Elements of Programming##
+
+**Primitive Expressions** - The simplest entities that the language is concerned with. I believe that this is equivalent to **atomic symbols** in John McCathy's conception of Lisp.
+
+Scheme provides us with **means of combination** and **means of abstraction** to build and name (respectively) **compound elements** from primitive expressions.
+
+###1.1.1  Expressions###
+
+**Expression** - Anything that can be evaluated by an interpreter, e.g., `486`, `(print 9)`, `print`.
+
+**Primitive Procedure** - A procedure includes with the programming language. Primitive procedures are primitive expressions.
+
+**Combination** - A list of expressions delimited by parentheses. Members of the combinations are called **elements**. The leftmost element of a combination is called the **operator**, the remaining elements are called **operands**. The value of an operand is called the **argument** of the associated procedure.
+
+**Prefix Notation** - The convention of placing an operator to the left of all its operands.
+
+**Compound Expression** - An expression that is a combination of other expressions.
+
+**Nesting** - When a combination has one or more elements which are themselves combinations.
+
+**Pretty-printing** - When we write combinations such that there is a linebreak between adjacent operands, and operands of the same combination align vertically.
+
+A **name** identifies a **variable** whose **value** is some computational **object**.
+
+`define` is the operator that we use to name things. It is the simplest means of abstraction provided by scheme.
+
+
 ###1.1.3 Evaluating combinations###
 
 Elements of a combination are also called subexpressions. The two types of subexpressions are operators and operands.
@@ -41,7 +80,7 @@ A primitive procedure is a built-in procedure.
 
 Evaluating compound procedures is done in the same way as evaluating primitive procedures:
 
-*To apply a compound procedure to arguments, evaluate the body of the procedure with each formal parameter replaced by the corrosponding arguments (or each formal parameter bound to the corrosponding actual parameter).*
+*To apply a compound procedure to arguments, evaluate the body of the procedure with each formal parameter replaced by the corresponding arguments (or each formal parameter bound to the corresponding actual parameter).*
 
 Notice that this rule (or procedure) for evaluating procedures ask us to evaluate the operands of a combination before evaluating the operator, because it asks us to evaluate the body of the procedure using the arguments (value of operands). This is somewhat different than the "percolate upwards" algorithm described above.
 
@@ -53,7 +92,7 @@ Note that this is just a model that is meant to give meaning to the concept of p
 
 For procedures that can be modeled using the substitution model, these two evaluation orders will produce the same value.
 
-Note that if a formal parameter appears multiple times in an operator body, it will have to be evaluated for each time it appears if we are using normal-order evalutation. This is one reason to prefer application-order evaluation.
+Note that if a formal parameter appears multiple times in an operator body, it will have to be evaluated for each time it appears if we are using normal-order evaluation. This is one reason to prefer applicative-order evaluation.
 
 ###1.1.6 Conditional Expressions and Predicates###
 
@@ -66,7 +105,7 @@ Lisp supports constructs for conditional expressions, also known as case analysi
 and so on. 
 
 `(<p> <e>)` is called a clause
-`<p>` is called a predicate, and it's value is interpretted as true of false
+`<p>` is called a predicate, and its value is interpreted as true of false
 `<e>` is a consequent expression
 
 `cond` supports a fall-through operator, `else`, used as follows
@@ -82,7 +121,7 @@ Another operator for case analysis is the special form `if`, used as follows
 
 Note that `if` cannot be modeled using the substitution model, because it only evaluates one of `<consequent>` and `<alternative>`.
 
-We also have logical operaters `and`, `or` and `not` used like
+We also have logical operators `and`, `or` and `not` used like
 
     (and <e1> <e2> <e3>)
 
@@ -94,27 +133,27 @@ Note that we make the distinction between special forms and procedures. Both are
 
 ###1.1.7 Example: Square Roots by Newton's Method###
 
+
+    (define (average x y)
+      (/ (+ x y) 2))
+      
+    (define (improve guess x)
+      (average guess (/ x guess)))
+
+    (define (good-enough? guess x)
+      (< (abs (- (square guess) x)) 0.001))
+      
     (define (sqrt-iter guess x)
       (if (good-enough? guess x)
           guess
           (sqrt-iter (improve guess x)
                      x)))
-
-    (define (improve guess x)
-      (average guess (/ x guess)))
-
-    (define (average x y)
-      (/ (+ x y) 2))
-
-    (define (good-enough? guess x)
-      (< (abs (- (square guess) x)) 0.001))
-
     (define (sqrt x)
       (sqrt-iter 1.0 x))
   
 ###1.1.8  Procedures as Black-Box Abstractions###
 
-**Free and Bound Variables:** A procedure definition will bind a free variable. Bound varibles are exactly analogous to dummy variables.
+**Free and Bound Variables:** A procedure definition will bind a free variable. Bound variables are exactly analogous to dummy variables.
 
 **Lexical Scoping:**
 AKA static scoping, as opposed to dynamic scoping. 
@@ -126,4 +165,4 @@ Statically scoped languages differ as to whether the scope is limited to the sma
 Also note that in Lisp, a symbol's binding has lexical scope, not the mapping from an identifier to a symbol. That mapping transcends scope. For instance in `(let ((x 3)) (let ((x 4)) ..))` the identifier `x` in the source is mapped to a symbol object when the source is scanned and turned into a nested list, at what is known as "read time". Both occurrences of `x` map to the same symbol object, even though each one denotes a local variable in a different lexical scope. A symbol object is a concrete data structure in the address space; every `x` in the internal representation of the form is a pointer to that object.
 
 **Block Structure:**
-Refers to the nesting of definitions within other defintions, so that inner defintions are only accessible from within the outer defintion. Embedded definitions must come first in a procedure body.
+Refers to the nesting of definitions within other definitions, so that inner definitions are only accessible from within the outer definition. Embedded definitions must come first in a procedure body.
