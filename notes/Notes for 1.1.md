@@ -90,9 +90,9 @@ Notice that this rule (or procedure) for evaluating procedures ask us to evaluat
 
 Note that this is just a model that is meant to give meaning to the concept of procedure application. It does not actually describe how the interpreter carries out procedures.
 
-**normal-order evaluation:** substitute operand expressions for formal parameters when applying procedures (i.e. evaluate operators before operands).
+**Normal-order evaluation:** substitute operand expressions for formal parameters when applying procedures (i.e. evaluate operators before operands).
 
-**applicative-order evaluation:** substitute arguments (operand values) for formal parameters when applying procedures (i.e. evaluate operands before operators). Used in the substitution model as well as by the interpreter.
+**Applicative-order evaluation:** substitute arguments (operand values) for formal parameters when applying procedures (i.e. evaluate operands before operators). Used in the substitution model as well as by the interpreter.
 
 For procedures that can be modeled using the substitution model, these two evaluation orders will produce the same value.
 
@@ -168,8 +168,7 @@ Note that we make the distinction between special forms and procedures. Both are
 
 **Free and Bound Variables:** A procedure definition will bind a free variable. Bound variables are exactly analogous to dummy variables.
 
-**Lexical Scoping:**
-AKA static scoping, as opposed to dynamic scoping. 
+**Lexical Scoping:** AKA static scoping, as opposed to dynamic scoping. 
 In SICP, lexical scoping is when a variable is bound by a procedure definition, but within nested procedure definitions, it becomes a free variable whose value is given by the outer procedure argument.
 In a lexically scoped language, the scope of an identifier is fixed at compile time to some region in the source code containing the identifier's declaration. This means that an identifier is only accessible within that region (including procedures declared within it). 
 
@@ -177,5 +176,4 @@ This contrasts with dynamic scope where the scope depends on the nesting of proc
 Statically scoped languages differ as to whether the scope is limited to the smallest block (including begin/end blocks) containing the identifier's declaration (e.g. C, Perl) or to whole function and procedure bodies, or some larger unit of code.
 Also note that in Lisp, a symbol's binding has lexical scope, not the mapping from an identifier to a symbol. That mapping transcends scope. For instance in `(let ((x 3)) (let ((x 4)) ..))` the identifier `x` in the source is mapped to a symbol object when the source is scanned and turned into a nested list, at what is known as "read time". Both occurrences of `x` map to the same symbol object, even though each one denotes a local variable in a different lexical scope. A symbol object is a concrete data structure in the address space; every `x` in the internal representation of the form is a pointer to that object.
 
-**Block Structure:**
-Refers to the nesting of definitions within other definitions, so that inner definitions are only accessible from within the outer definition. Embedded definitions must come first in a procedure body.
+**Block Structure:** Refers to the nesting of definitions within other definitions, so that inner definitions are only accessible from within the outer definition. Embedded definitions must come first in a procedure body.
