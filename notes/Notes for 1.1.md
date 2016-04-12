@@ -64,11 +64,15 @@ A much more powerful way to use the define operator is to use it to define a pro
 
 To name the procedure that squares a number, we do
 
-    (define (square x) (* x x)). 
-    
+```scheme
+(define (square x) (* x x))
+```
+
 In general, we do
 
-    (define (<name> <formal parameters>)) <body>)
+```scheme
+(define (<name> <formal parameters>) <body>)
+```
 
 There are two kinds of parameters. Formal parameters are contained in a function definition, and actual parameters are the arguments passed to a function. Calling a function temporarily binds a formal parameter to an actual parameter
 
@@ -98,9 +102,11 @@ Note that if a formal parameter appears multiple times in an operator body, it w
 
 Lisp supports constructs for conditional expressions, also known as case analysis. One such construct is the `cond` operator. The general form is 
 
-    (cond (<p1> <e1>)
-          (<p2> <e2>)
-          (<p3> <e3>))
+```scheme
+(cond (<p1> <e1>)
+      (<p2> <e2>)
+      (<p3> <e3>))
+```
 
 and so on. 
 
@@ -110,10 +116,12 @@ and so on.
 
 `cond` supports a fall-through operator, `else`, used as follows
 
-    (cond (<p1> <e1>)
-          (<p2> <e2>)
-          (<p3> <e3>)
-          (else <e4>))
+```scheme
+(cond (<p1> <e1>)
+      (<p2> <e2>)
+      (<p3> <e3>)
+      (else <e4>))
+```
 
 Another operator for case analysis is the special form `if`, used as follows
 
@@ -123,33 +131,36 @@ Note that `if` cannot be modeled using the substitution model, because it only e
 
 We also have logical operators `and`, `or` and `not` used like
 
-    (and <e1> <e2> <e3>)
+```scheme
+(and <e1> <e2> <e3>)
 
-    (or <e1> <e2> <e3>)
+(or <e1> <e2> <e3>)
 
-    (not <e>)
+(not <e>)
+```
 
 Note that we make the distinction between special forms and procedures. Both are a kind of operator, but special forms cannot be modeled with any of the procedure models that we will come up with. `and` and `or` are special forms rather than procedures, whereas `not` is a procedure.
 
 ###1.1.7 Example: Square Roots by Newton's Method###
 
-
-    (define (average x y)
-      (/ (+ x y) 2))
+```scheme
+(define (average x y)
+        (/ (+ x y) 2))
       
-    (define (improve guess x)
-      (average guess (/ x guess)))
+(define (improve guess x)
+        (average guess (/ x guess)))
 
-    (define (good-enough? guess x)
-      (< (abs (- (square guess) x)) 0.001))
+(define (good-enough? guess x)
+        (< (abs (- (square guess) x)) 0.001))
       
-    (define (sqrt-iter guess x)
-      (if (good-enough? guess x)
-          guess
-          (sqrt-iter (improve guess x)
-                     x)))
-    (define (sqrt x)
-      (sqrt-iter 1.0 x))
+(define (sqrt-iter guess x)
+        (if (good-enough? guess x)
+            guess
+           (sqrt-iter (improve guess x)
+                      x)))
+(define (sqrt x)
+        (sqrt-iter 1.0 x))
+```
   
 ###1.1.8  Procedures as Black-Box Abstractions###
 
