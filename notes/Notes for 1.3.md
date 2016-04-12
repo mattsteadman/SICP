@@ -8,9 +8,9 @@ A procedure can be passed and returned to and from another procedure. The latter
 
 The special form `lambda` is useful for defining procedures without needing to name them with `define`. `lambda` takes two combinations as arguments. The first combination contains the formal parameters to the procedure that it returns, and the second combination contains it's body.
 
-
-    (lambda (<formal parameters>) (<procedure body>))
-
+```lisp
+(lambda (<formal parameters>) (<procedure body>))
+```
 
 We can use `lambda` to assign local variables to expressions by doing the following:
 
@@ -18,17 +18,19 @@ We can use `lambda` to assign local variables to expressions by doing the follow
 2. Create a `lambda` procedure whose *formal parameters* are those variables and whose body uses those variables however you want (e.g. apply procedure `f`).
 3. Pass the expressions (e.g. `e1`, `e2`) to which your variables should be bound as *actual parameters* of your `lambda` procedure.
 
-
-    (lambda (v1 v2) 
-            (f v1 v2)) 
-    (e1 e2)
+```lisp
+(lambda (v1 v2) 
+        (f v1 v2)) 
+(e1 e2)
+```
 
 This pattern is so useful that it has been given a special form, called `let`. The following `let` combination can be constructed as follows:
 
-    (let ((v1 e1) 
-          (v2 e2))
-         (f v1 v2))
-
+```lisp
+(let ((v1 e1) 
+      (v2 e2))
+      (f v1 v2))
+```
 
 
 *Nota Bene: The first argument of `let`, as well as `lambda` does not fit the pattern that we expect from a combination, i.e. the combination is a list rather than an operator being applied to operands*.
