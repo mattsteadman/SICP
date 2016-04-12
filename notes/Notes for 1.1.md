@@ -158,8 +158,8 @@ Note that we make the distinction between special forms and procedures. Both are
 (define (sqrt-iter guess x)
         (if (good-enough? guess x)
             guess
-           (sqrt-iter (improve guess x)
-                      x)))
+            (sqrt-iter (improve guess x)
+                       x)))
 (define (sqrt x)
         (sqrt-iter 1.0 x))
 ```
