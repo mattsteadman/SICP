@@ -29,7 +29,7 @@ This pattern is so useful that it has been given a special form, called `let`. T
 ```lisp
 (let ((v1 e1) 
       (v2 e2))
-      (f v1 v2))
+     (f v1 v2))
 ```
 
 
