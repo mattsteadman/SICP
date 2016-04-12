@@ -12,25 +12,25 @@
 
 ##1.1 The Elements of Programming##
 
-**Primitive Expressions** - The simplest entities that the language is concerned with. I believe that this is equivalent to **atomic symbols** in John McCathy's conception of Lisp.
+**Primitive Expressions**: The simplest entities that the language is concerned with. I believe that this is equivalent to **atomic symbols** in John McCathy's conception of Lisp.
 
 Scheme provides us with **means of combination** and **means of abstraction** to build and name (respectively) **compound elements** from primitive expressions.
 
 ###1.1.1  Expressions###
 
-**Expression** - Anything that can be evaluated by an interpreter, e.g., `486`, `(print 9)`, `print`.
+**Expression**: Anything that can be evaluated by an interpreter, e.g., `486`, `(print 9)`, `print`.
 
-**Primitive Procedure** - A procedure includes with the programming language. Primitive procedures are primitive expressions.
+**Primitive Procedure**: A procedure includes with the programming language. Primitive procedures are primitive expressions.
 
-**Combination** - A list of expressions delimited by parentheses. Members of the combinations are called **elements**. The leftmost element of a combination is called the **operator**, the remaining elements are called **operands**. The value of an operand is called the **argument** of the associated procedure.
+**Combination**: A list of expressions delimited by parentheses. Members of the combinations are called **elements**. The leftmost element of a combination is called the **operator**, the remaining elements are called **operands**. The value of an operand is called the **argument** of the associated procedure.
 
-**Prefix Notation** - The convention of placing an operator to the left of all its operands.
+**Prefix Notation**: The convention of placing an operator to the left of all its operands.
 
-**Compound Expression** - An expression that is a combination of other expressions.
+**Compound Expression**: An expression that is a combination of other expressions.
 
-**Nesting** - When a combination has one or more elements which are themselves combinations.
+**Nesting**: When a combination has one or more elements which are themselves combinations.
 
-**Pretty-printing** - When we write combinations such that there is a linebreak between adjacent operands, and operands of the same combination align vertically.
+**Pretty-printing**: When we write combinations such that there is a linebreak between adjacent operands, and operands of the same combination align vertically.
 
 A **name** identifies a **variable** whose **value** is some computational **object**.
 
