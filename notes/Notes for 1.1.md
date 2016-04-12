@@ -1,6 +1,6 @@
 #Chapter 1 Building Abstractions with Procedures#
 
-Computational **Process** - The evolution of the execution of a procedure.
+**Process** - The evolution of the execution of a procedure.
 
 **Program** or **Procedure** - A description of a process, or the rules that governs its evolution.
 
