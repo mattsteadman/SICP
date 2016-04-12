@@ -125,7 +125,9 @@ and so on.
 
 Another operator for case analysis is the special form `if`, used as follows
 
-    (if <predicate> <consequent> <alternative>)
+```scheme
+(if <predicate> <consequent> <alternative>)
+```
 
 Note that `if` cannot be modeled using the substitution model, because it only evaluates one of `<consequent>` and `<alternative>`.
 
