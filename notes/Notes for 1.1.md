@@ -1,12 +1,12 @@
 #Chapter 1 Building Abstractions with Procedures#
 
-**Process** - The evolution of the execution of a procedure.
+**Process**: The evolution of the execution of a procedure.
 
-**Program** or **Procedure** - A description of a process, or the rules that governs its evolution.
+**Program** or **Procedure**: A description of a process, or the rules that governs its evolution.
 
-**Interpreter** - Carries out the evolution of a process, or the execution of a procedure.
+**Interpreter**: Carries out the evolution of a process, or the execution of a procedure.
 
-**Procedures and Data** - Data is the *stuff* we want to manipulate, and procedures are descriptions of the rules for manipulating them. Even though procedures are implemented as data in lisp, they still might be different in some conceptions of computation.
+**Procedures and Data**: Data is the *stuff* we want to manipulate, and procedures are descriptions of the rules for manipulating them. Even though procedures are implemented as data in lisp, they still might be different in some conceptions of computation.
 
 
 
